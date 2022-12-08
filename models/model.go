@@ -1,8 +1,9 @@
 package models
 
+// User schema of the user table
 type Stock struct {
-	ID      int    `json:"id"`
-	Name    string `json:"name"`
-	Price   int    `json:"price"`
-	Company string `json:"company"`
+	StockID int64  `json:"stockid"`
+	Name    string `json:"name,omitempty"`
+	Price   int    `json:"price,omitempty"`
+	Company string `json:"company,omitempty"`
 }

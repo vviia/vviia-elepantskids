@@ -219,7 +219,7 @@ func getStock(id int64) (models.Stock, error) {
 	row := db.QueryRow(sqlStatement, id)
 
 	// unmarshal the row object to stock
-	err := row.Scan(&stock.ID, &stock.Name, &stock.Price, &stock.Company)
+	err := row.Scan(&stock.StockID, &stock.Name, &stock.Price, &stock.Company)
 
 	switch err {
 	case sql.ErrNoRows:
@@ -263,7 +263,7 @@ func getAllStocks() ([]models.Stock, error) {
 		var stock models.Stock
 
 		// unmarshal the row object to stock
-		err = rows.Scan(&stock.ID, &stock.Name, &stock.Price, &stock.Company)
+		err = rows.Scan(&stock.StockID, &stock.Name, &stock.Price, &stock.Company)
 
 		if err != nil {
 			log.Fatalf("Unable to scan the row. %v", err)
