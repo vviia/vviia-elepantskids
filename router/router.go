@@ -3,7 +3,7 @@ package router
 import (
 	"github.com/gorilla/mux"
 
-	"github.com/vviia/elepantskids/middleware"
+	middleware "github.com/vviia/elepantskids/controller"
 )
 
 func Router() *mux.Router {
